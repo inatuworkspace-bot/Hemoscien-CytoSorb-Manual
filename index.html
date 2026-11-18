@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>CytoSorb® 體外血液淨化系統 | 英禾美生醫 Hemoscien</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', '"Noto Sans TC"', '"Microsoft JhengHei"', 'sans-serif'],
+          },
+          colors: {
+            cyto: {
+              dark: '#030B17',
+              navy: '#0B1D3A',
+              royal: '#1B365D',
+              sky: '#00A3E0',
+              glow: '#38BDF8',
+              ice: '#E0F2FE',
+            }
+          },
+          boxShadow: {
+            'glow-sky': '0 0 35px -5px rgba(0, 163, 224, 0.35)',
+            'glow-card': '0 10px 40px -10px rgba(0, 163, 224, 0.18)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #030B17;
+      color: #F8FAFC;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .keynote-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(0, 163, 224, 0.22) 0%, rgba(11, 29, 58, 0.6) 40%, #030B17 85%);
+    }
+    .bento-card {
+      background: linear-gradient(145deg, rgba(16, 36, 68, 0.72) 0%, rgba(7, 18, 38, 0.9) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bento-card:hover, .bento-card.active {
+      border-color: rgba(56, 189, 248, 0.55);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px -8px rgba(0, 163, 224, 0.28);
+    }
+    .text-gradient-sky {
+      background: linear-gradient(135deg, #FFFFFF 15%, #7DD3FC 55%, #00A3E0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .pill-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .pill-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes pulseSlow {
+      0%, 100% { opacity: 0.45; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.06); }
+    }
+    .animate-glow {
+      animation: pulseSlow 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cyto-sky selection:text-white">
+
+  <!-- Sticky Top Navigation (Mobile Optimized) -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#030B17]/80 backdrop-blur-xl border-b border-sky-400/15">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyto-sky shadow-[0_0_10px_#00A3E0]"></span>
+        <span class="font-extrabold tracking-tight text-lg text-white">CytoSorb<sup class="text-xs text-cyto-glow">®</sup></span>
+      </a>
+      <nav class="flex items-center gap-1.5 overflow-x-auto pill-scroll text-xs font-medium">
+        <a href="#tech" class="px-2.5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap transition">技術優勢</a>
+        <a href="#indications" class="px-2.5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap transition">六大適應症</a>
+        <a href="#drugs" class="px-2.5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap transition">藥物查詢</a>
+        <a href="#tools" class="px-2.5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap transition">CytoScore & 文獻</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HERO (Apple Keynote Style) -->
+  <section id="hero" class="relative pt-24 pb-16 md:pt-32 md:pb-24 px-5 keynote-bg overflow-hidden">
+    <!-- Ambient Glow -->
+    <div class="absolute top-16 left-1/2 -translate-x-1/2 w-[340px] h-[340px] md:w-[540px] md:h-[540px] rounded-full bg-cyto-sky/20 blur-[90px] pointer-events-none animate-glow"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/80 border border-sky-400/30 text-sky-300 text-xs font-semibold tracking-wider uppercase mb-6">
+        <span>Extracorporeal Blood Purification</span>
+        <span class="text-sky-500">•</span>
+        <span>CytoSorb® 300</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] mb-5 text-gradient-sky">
+        Working to saving lives together
+      </h1>
+
+      <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+        專為重症加護與心臟外科打造的高效全血吸附科技。<br class="hidden sm:inline" />
+        精準調控細胞激素風暴與內源性毒素，協助臨床團隊重掌治療主導權。
+      </p>
+
+      <!-- Visual Cartridge Stylistic Illustration -->
+      <div class="relative mx-auto w-full max-w-xs sm:max-w-sm my-8">
+        <div class="bento-card rounded-3xl p-6 relative overflow-hidden shadow-glow-sky">
+          <div class="flex items-center justify-between text-xs text-sky-300/80 mb-4 font-mono">
+            <span>ADSORBER COLUMN</span>
+            <span>300 mL</span>
+          </div>
+          <!-- CytoSorb 300 Product Photo (External File for GitHub Pages) -->
+          <div class="flex justify-center items-center py-3 relative">
+            <div class="w-44 h-44 bg-cyto-sky/25 blur-2xl rounded-full absolute pointer-events-none"></div>
+            <img
+              src="./CT-Photoroom.jpg"
+              alt="CytoSorb 300 體外血液淨化吸附柱"
+              style="height: 240px; width: auto; display: block;"
+              class="h-56 sm:h-64 w-auto object-contain rounded-xl drop-shadow-[0_0_24px_rgba(56,189,248,0.5)] transition-transform duration-500 hover:scale-105 relative z-10"
+            />
+          </div>
+          <div class="grid grid-cols-3 gap-2 pt-3 border-t border-sky-400/20 text-center">
+            <div>
+              <div class="text-sm font-bold text-white">45,000 m²</div>
+              <div class="text-[11px] text-slate-400">吸附表面積</div>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-cyto-glow">&lt; 60 kDa</div>
+              <div class="text-[11px] text-slate-400">精準分子量</div>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">100–700</div>
+              <div class="text-[11px] text-slate-400">流速 mL/min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Quick Actions -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+        <a href="#indications" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-cyto-sky hover:bg-sky-400 text-slate-950 font-bold text-sm tracking-wide transition shadow-glow-sky">
+          探索六大臨床適應症
+        </a>
+        <a href="#drugs" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-sm tracking-wide transition">
+          查詢 2026 藥物吸附表
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: TECHNICAL PRINCIPLES & ADVANTAGES (Bento Grid) -->
+  <section id="tech" class="py-16 md:py-24 px-5 max-w-5xl mx-auto reveal">
+    <div class="mb-10 md:mb-14">
+      <p class="text-cyto-glow text-xs font-bold tracking-widest uppercase mb-2">Technology & Core Advantages</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        突破傳統透析極限。<br />
+        <span class="text-slate-400 font-bold">點選卡片深入了解核心機制。</span>
+      </h2>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4" id="bentoContainer">
+      
+      <!-- Card 1: 45,000 m2 -->
+      <button type="button" onclick="toggleBento(this)" class="bento-card text-left md:col-span-3 rounded-3xl p-6 flex flex-col justify-between group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-sky-500/15 text-cyto-glow text-xs font-semibold">超高吸附容量</span>
+            <span class="text-xs text-slate-400 group-hover:text-cyto-glow transition">點擊展開 ▾</span>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black text-gradient-sky tracking-tight my-2">45,000 m²</div>
+          <h3 class="text-lg font-bold text-white mb-1">專利多孔聚合物微珠</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">單支吸附柱具備相當於 6 座標準足球場的巨大有效吸附面積，提供全血高效清除動力。</p>
+        </div>
+        <div class="bento-detail hidden mt-4 pt-4 border-t border-sky-400/20 text-xs text-sky-200/90 space-y-1.5 leading-relaxed">
+          <p>• <strong>專利交聯二乙烯基苯聚合物（Cross-linked divinylbenzene）</strong>：內部佈滿奈米級中孔道結構，血流均勻通過且壓降極低。</p>
+          <p>• 血液填充體積僅 150 mL，可維持高流速（100–700 mL/min）運作而不易凝血阻塞。</p>
+        </div>
+      </button>
+
+      <!-- Card 2: < 60 kDa -->
+      <button type="button" onclick="toggleBento(this)" class="bento-card text-left md:col-span-3 rounded-3xl p-6 flex flex-col justify-between group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-sky-500/15 text-cyto-glow text-xs font-semibold">精準分子篩選</span>
+            <span class="text-xs text-slate-400 group-hover:text-cyto-glow transition">點擊展開 ▾</span>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black text-gradient-sky tracking-tight my-2">&lt; 60 kDa</div>
+          <h3 class="text-lg font-bold text-white mb-1">疏水性中大分子專一吸附</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">鎖定細胞激素、膽紅素、肌紅蛋白與抗血栓藥物，同時保留白蛋白與凝血因子等重要大分子。</p>
+        </div>
+        <div class="bento-detail hidden mt-4 pt-4 border-t border-sky-400/20 text-xs text-sky-200/90 space-y-2 leading-relaxed">
+          <p>• <strong>目標清除光譜</strong>：IL-1β、IL-6、IL-8、IL-10、TNF-α、HMGB1、膽紅素（Bilirubin）、肌紅蛋白（Myoglobin）、Ticagrelor 與 Rivaroxaban。</p>
+          <p>• <strong>大分子保護機制</strong>：分子量 &gt; 60 kDa 的白蛋白（Albumin ~66 kDa）、免疫球蛋白與凝血因子無法進入微珠孔隙，避免流失。</p>
+        </div>
+      </button>
+
+      <!-- Card 3: Concentration Dependent -->
+      <button type="button" onclick="toggleBento(this)" class="bento-card text-left md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-sky-500/15 text-cyto-glow text-xs font-semibold">智慧自我調節</span>
+            <span class="text-xs text-slate-400 group-hover:text-cyto-glow transition">+</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-black text-white tracking-tight my-2">濃度依賴性機制</div>
+          <p class="text-sm text-slate-300 leading-relaxed">血中濃度越高、清除速率越快；隨濃度下降自動趨緩，維持生理恆定不過度清除。</p>
+        </div>
+        <div class="bento-detail hidden mt-4 pt-4 border-t border-sky-400/20 text-xs text-sky-200/90 leading-relaxed">
+          <p>Concentration-dependent 物理吸附原理：高濃度風暴期提供最大清除梯度，當指標降至生理安全範圍時自動減緩吸附，保護正常免疫調節功能。</p>
+        </div>
+      </button>
+
+      <!-- Card 4: ISO 10993 Biocompatibility (NEW) -->
+      <button type="button" onclick="toggleBento(this)" class="bento-card text-left md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-semibold">國際安全認證</span>
+            <span class="text-xs text-slate-400 group-hover:text-cyto-glow transition">+</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-black text-white tracking-tight my-2">通過 ISO 10993 認證</div>
+          <p class="text-sm text-slate-300 leading-relaxed">生物相容性高，不會活化補體系統與凝血反應，大幅降低體外循環二次發炎風險。</p>
+        </div>
+        <div class="bento-detail hidden mt-4 pt-4 border-t border-sky-400/20 text-xs text-sky-200/90 leading-relaxed">
+          <p>臨床實證顯示：血液流經 CytoSorb® 時不會誘發補體系統（Complement system）或血小板異常活化，且不含乳膠（Latex-free）與塑化劑（PHT-free）。</p>
+        </div>
+      </button>
+
+      <!-- Card 5: 5-min Priming (MODIFIED) -->
+      <button type="button" onclick="toggleBento(this)" class="bento-card text-left md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-sky-500/15 text-cyto-glow text-xs font-semibold">極速臨床上機</span>
+            <span class="text-xs text-slate-400 group-hover:text-cyto-glow transition">+</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-black text-white tracking-tight my-2">5 分鐘快速預沖</div>
+          <p class="text-sm text-slate-300 leading-relaxed">僅需 2L 生理食鹽水沖洗，無需肝素預沖（Heparin-free priming），為急救爭取黃金時間。</p>
+        </div>
+        <div class="bento-detail hidden mt-4 pt-4 border-t border-sky-400/20 text-xs text-sky-200/90 leading-relaxed">
+          <p>吸附柱出廠已預填無菌等張生理食鹽水（pH 6.8），上機前僅需以 2,000 mL 0.9% NaCl 重力排氣沖洗約 5 分鐘即可使用，亦適用於肝素誘導血小板低下（HIT）患者（搭配檸檬酸抗凝）。</p>
+        </div>
+      </button>
+
+      <!-- Card 6: Flexible Platform Integration (NEW) -->
+      <button type="button" onclick="toggleBento(this)" class="bento-card text-left md:col-span-6 rounded-3xl p-6 flex flex-col justify-between group cursor-pointer">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-sky-500/15 text-cyto-glow text-xs font-semibold mb-2">
+              全方位體外循環整合
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black text-white">支援串接 CKRT / ECMO / CPB</h3>
+            <p class="text-sm text-slate-300 mt-1">無需血漿分離器，可直接串聯現有 ICU 與心臟外科體外循環管路，單機血液灌流模式亦完全支援。</p>
+          </div>
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <span class="px-3.5 py-2 rounded-xl bg-cyto-navy border border-sky-400/30 text-xs font-bold text-sky-200">CKRT (Pre / Post)</span>
+            <span class="px-3.5 py-2 rounded-xl bg-cyto-navy border border-sky-400/30 text-xs font-bold text-sky-200">VA / VV-ECMO</span>
+            <span class="px-3.5 py-2 rounded-xl bg-cyto-navy border border-sky-400/30 text-xs font-bold text-sky-200">CPB 心肺繞道</span>
+            <span class="px-3.5 py-2 rounded-xl bg-cyto-navy border border-sky-400/30 text-xs font-bold text-sky-200">獨立血液灌流 HP</span>
+          </div>
+        </div>
+        <div class="bento-detail hidden mt-4 pt-4 border-t border-sky-400/20 text-xs text-sky-200/90 grid grid-cols-1 sm:grid-cols-3 gap-3 leading-relaxed">
+          <div class="p-3 rounded-xl bg-slate-900/60">
+            <strong class="text-white block mb-1">CKRT / CRRT 串接</strong>
+            可安裝於人工腎臟前（Pre-filter）或後（Post-filter），建議流速 100–700 mL/min。
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60">
+            <strong class="text-white block mb-1">ECMO 分流旁路</strong>
+            搭配專用 ECMO Connector 接於幫浦後、氧合器前之旁路（Shunt），安全無氣泡風險。
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60">
+            <strong class="text-white block mb-1">CPB 術中整合</strong>
+            接於心肺機主幫浦後至靜脈儲血槽（Venous reservoir）旁路，建議灌流時間 &gt; 60 分鐘。
+          </div>
+        </div>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: SIX CLINICAL INDICATIONS (Interactive Tabs + Detailed Clinical Cutoffs) -->
+  <section id="indications" class="py-16 md:py-24 px-5 bg-gradient-to-b from-[#030B17] via-[#07152B] to-[#030B17] border-y border-sky-400/10 reveal">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8">
+        <p class="text-cyto-glow text-xs font-bold tracking-widest uppercase mb-2">Clinical Applications</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">六大臨床適應症與治療路徑</h2>
+        <p class="text-sm text-slate-400 mt-2">點選下方適應症類別，檢視具體臨床啟動數值、更換頻率與停用指標。</p>
+      </div>
+
+      <!-- Horizontal Scrollable Pill Tabs (Mobile First) -->
+      <div class="flex gap-2 overflow-x-auto pill-scroll pb-3 mb-6" id="indicationTabs">
+        <!-- Populated by JS in exact requested order -->
+      </div>
+
+      <!-- Dynamic Indication Detail Card -->
+      <div id="indicationDetailCard" class="bento-card rounded-3xl p-6 sm:p-8 shadow-glow-card">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: 2026 INTERACTIVE DRUG ADSORPTION SEARCH -->
+  <section id="drugs" class="py-16 md:py-24 px-5 max-w-5xl mx-auto reveal">
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/25 text-cyto-glow text-xs font-semibold mb-3">
+        <span>2026 Updated Database • B1550R01ENG2026</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">藥物吸附與劑量調整查詢</h2>
+      <p class="text-sm text-slate-400 mt-2">支援即時輸入英文藥名或藥理分類搜尋，快速確認體內（In-vivo）與體外（In-vitro）清除臨床意義。</p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="bento-card rounded-3xl p-4 sm:p-6 mb-6">
+      <div class="relative mb-4">
+        <input
+          type="text"
+          id="drugSearchInput"
+          placeholder="輸入英文藥名搜尋（例如：Vancomycin, Meropenem, Ticagrelor...）"
+          class="w-full bg-[#040D1A] border border-sky-400/30 focus:border-cyto-glow focus:outline-none rounded-2xl pl-11 pr-10 py-3.5 text-sm text-white placeholder-slate-500 transition"
+        />
+        <svg class="w-5 h-5 text-sky-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z"/>
+        </svg>
+        <button id="clearSearchBtn" onclick="clearDrugSearch()" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white px-2 py-1">清除</button>
+      </div>
+
+      <!-- Significance Filter Pills -->
+      <div class="flex flex-wrap gap-2 mb-3">
+        <button onclick="setSigFilter('all')" data-sig="all" class="sig-btn active px-3.5 py-2 rounded-xl text-xs font-bold bg-cyto-sky text-slate-950 transition">
+          全部藥物 (<span id="countAll">0</span>)
+        </button>
+        <button onclick="setSigFilter('significant')" data-sig="significant" class="sig-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-400/30 hover:bg-amber-500/25 transition">
+          ⚠️ 具顯著吸附 / 需評估調量 (<span id="countSig">0</span>)
+        </button>
+        <button onclick="setSigFilter('insignificant')" data-sig="insignificant" class="sig-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 hover:bg-emerald-500/25 transition">
+          ✓ 吸附不顯著 / 無需調量 (<span id="countInsig">0</span>)
+        </button>
+      </div>
+
+      <!-- Pharmacological Category Filter -->
+      <div class="flex gap-1.5 overflow-x-auto pill-scroll pt-1" id="drugCatTabs">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Drug Results Grid -->
+    <div id="drugResultsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[540px] overflow-y-auto pr-1">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Clinical Footnote -->
+    <div class="mt-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs text-slate-400 leading-relaxed space-y-1">
+      <p>* <strong>臨床建議</strong>：以上分類依據最新體內（In-vivo）與體外（In-vitro）藥物動力學實證整理。若臨床條件允許，強烈建議搭配<strong>治療藥物濃度監測（TDM）</strong>以精準調整劑量。</p>
+      <p>* 標示 <span class="italic text-sky-300">斜體（Animal data）</span> 為動物實驗數據；標示 <span class="text-sky-300">**</span> 為僅具系統性血漿濃度（Systemic plasma levels）數據。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CYTOSCORE & LITERATURE REFERENCE MODAL TRIGGER -->
+  <section id="tools" class="py-16 md:py-24 px-5 max-w-5xl mx-auto reveal">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- CytoScore Card -->
+      <div class="bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-cyto-sky/15 blur-2xl pointer-events-none"></div>
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-sky-500/15 text-cyto-glow text-xs font-bold mb-4">臨床決策輔助工具</span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">CytoScore 臨床評估系統</h3>
+          <p class="text-sm text-slate-300 leading-relaxed mb-5">
+            針對敗血性休克啟動標準治療後 <strong>6 小時</strong>進行評估（涵蓋 Lactate 濃度與變化、Norepinephrine 劑量與增幅、第二線升壓藥、Hydrocortisone 與輸液復甦量）。當 <strong>CytoScore &gt; 6 分</strong>時，建議於 12 小時內及早啟動 CytoSorb® 治療。
+          </p>
+        </div>
+        <a href="https://cytosorbents.com/cytoscore/" target="_blank" rel="noopener noreferrer"
+           class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-cyto-sky to-sky-400 hover:from-sky-400 hover:to-sky-300 text-slate-950 font-extrabold text-sm text-center flex items-center justify-center gap-2 shadow-glow-sky transition">
+          <span>前往 CytoScore 官方線上計算器</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Literature Reference Reserved Card -->
+      <div class="bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-blue-500/15 blur-2xl pointer-events-none"></div>
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-sky-200 text-xs font-bold mb-4">實證醫學資料庫</span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">六大適應症文獻參考</h3>
+          <p class="text-sm text-slate-300 leading-relaxed mb-5">
+            依循六大臨床適應症分類彙整國際期刊實證與專家共識（敗血症休克、急性肝衰竭、橫紋肌溶解、抗血栓清除、心內膜炎與主動脈手術、ARDS）。
+          </p>
+        </div>
+        <button type="button" onclick="openLitModal()"
+           class="w-full py-4 px-6 rounded-2xl bg-cyto-royal/90 hover:bg-cyto-royal border border-sky-400/40 text-white font-bold text-sm text-center flex items-center justify-center gap-2 transition cursor-pointer">
+          <svg class="w-4 h-4 text-cyto-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <span>開啟文獻參考分類專區</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: FOOTER & OFFICIAL LINKS -->
+  <footer class="pt-14 pb-20 px-5 border-t border-sky-400/15 bg-[#020710]">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-2xl font-black text-white tracking-tight mb-2">CytoSorb<sup class="text-xs text-cyto-glow">®</sup></div>
+      <p class="text-xs text-sky-300/80 font-medium tracking-wider uppercase mb-8">Working to saving lives together</p>
+
+      <!-- Three Required Action Buttons -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto mb-12">
+        <a href="https://cytosorbents.com/" target="_blank" rel="noopener noreferrer"
+           class="py-4 px-5 rounded-2xl bento-card hover:border-sky-400 text-white font-bold text-sm flex items-center justify-center gap-2 transition">
+          <span>CytoSorbents 國際官網</span>
+          <span class="text-cyto-glow">↗</span>
+        </a>
+        <a href="https://www.hemoscien.com.tw/" target="_blank" rel="noopener noreferrer"
+           class="py-4 px-5 rounded-2xl bento-card hover:border-sky-400 text-white font-bold text-sm flex items-center justify-center gap-2 transition">
+          <span>英禾美生醫官網</span>
+          <span class="text-cyto-glow">↗</span>
+        </a>
+        <a href="https://lihi1.me/AMTVl" target="_blank" rel="noopener noreferrer"
+           class="py-4 px-5 rounded-2xl bg-cyto-sky hover:bg-sky-400 text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2 shadow-glow-sky transition">
+          <span>官方線上諮詢</span>
+          <span>💬</span>
+        </a>
+      </div>
+
+      <div class="text-xs text-slate-500 space-y-1.5 leading-relaxed">
+        <p class="text-slate-400 font-semibold">台灣總代理：英禾美生醫股份有限公司 Hemoscien Corporation</p>
+        <p>衛署/衛部醫器輸字許可產品 • 本網頁資訊僅供醫療專業人員學術與臨床參考，實際治療決策請依主治醫師專業判斷為準。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LITERATURE REFERENCE MODAL (Reserved Framework with 6 Indications) -->
+  <div id="litModal" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-black/80 backdrop-blur-md p-0 sm:p-4">
+    <div class="w-full max-w-2xl bg-[#071428] border border-sky-400/30 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 max-h-[88vh] flex flex-col shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-sky-400/20">
+        <div>
+          <span class="text-[11px] font-bold tracking-wider uppercase text-cyto-glow">Evidence-Based Literature</span>
+          <h3 class="text-xl font-black text-white">文獻參考專區（依適應症分類）</h3>
+        </div>
+        <button type="button" onclick="closeLitModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition">✕</button>
+      </div>
+
+      <!-- 6 Indication Category Tabs (Exact Requested Order) -->
+      <div class="flex gap-2 overflow-x-auto pill-scroll py-4 border-b border-sky-400/10" id="litCategoryTabs">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Placeholder Content Area -->
+      <div id="litContentArea" class="py-10 px-4 text-center flex-1 overflow-y-auto flex flex-col items-center justify-center">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="pt-4 border-t border-sky-400/15 flex justify-end">
+        <button type="button" onclick="closeLitModal()" class="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-sm font-semibold text-white transition">關閉視窗</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // 1. SIX CLINICAL INDICATIONS DATA (Exact Order & Full Clinical Details)
+    // ==========================================
+    const indicationsData = [
+      {
+        id: 'sepsis',
+        shortTitle: '敗血症與血管麻痺性休克',
+        fullTitle: '敗血症與血管麻痺性休克 (Septic / Vasoplegic Shock)',
+        badge: 'Critical Care 重症加護',
+        goal: '抑制過度發炎風暴（Hyperinflammation）、快速降低升壓藥物需求、改善微循環與大循環灌流，促進休克逆轉。',
+        criteria: [
+          'Norepinephrine (NE) 劑量 ≥ 0.2 μg/kg/min 且持續上升',
+          '血中乳酸 Lactate ≥ 2 mmol/L 或持續上升（建議勿等到 > 8 mmol/L 才啟動）',
+          '發炎指標：IL-6 ≥ 500 pg/mL 或 Procalcitonin (PCT) > 3 μg/L',
+          'CytoScore 評估（啟動標準治療後 6 小時）> 6 分'
+        ],
+        timing: '診斷敗血性/血管麻痺性休克並啟動標準治療後，建議於 12 小時內及早介入（愈早啟動、未達不可逆器官損傷前效果最佳）。',
+        frequency: '若血流動力學仍不穩定，建議每 12 小時更換一支新吸附柱（12 hr → 12 hr → 24 hr），直到達成足夠循環穩定。',
+        stopCriteria: '休克逆轉，且 Norepinephrine 劑量穩定降至 ≤ 0.05 μg/kg/min 即可評估停用。'
+      },
+      {
+        id: 'liver',
+        shortTitle: '急性肝臟衰竭',
+        fullTitle: '急性肝臟衰竭與高膽紅素血症 (Liver Dysfunction / ACLF)',
+        badge: 'Liver Support 肝臟支持',
+        goal: '快速清除膽紅素（Bilirubin）與肝毒素、減緩全身性發炎反應，作為肝功能恢復或等待肝臟移植之重要橋接（Bridge to recovery / transplant）。',
+        criteria: [
+          '總膽紅素 Bilirubin ≥ 10 mg/dL（> 170 μmol/L）',
+          '肝性腦病變（Hepatic Encephalopathy, HE）Grade ≥ 2',
+          '急性肝衰竭（ALF）或慢加急性肝衰竭（ACLF Grade 2–3）、術後或移植後肝功能不全',
+          '合併難治性血管麻痺性休克或頑固性膽汁鬱積搔癢症'
+        ],
+        timing: '確認無不可逆器官損傷後及早啟動；若合併血管麻痺性休克，建議於 24 小時內串接 CKRT、ECMO 或獨立血液灌流。',
+        frequency: '因高濃度膽紅素易使吸附位點趨近飽和，建議每 8 小時評估並更換吸附柱（8 hr → 8 hr → 8 hr），穩定後可延長至 12–24 小時更換。',
+        stopCriteria: '膽紅素穩定降至 < 8 mg/dL（< 136 μmol/L）、肝性腦病變顯著改善、休克逆轉且發炎指標受控。'
+      },
+      {
+        id: 'rhabdo',
+        shortTitle: '橫紋肌溶解症',
+        fullTitle: '嚴重橫紋肌溶解症 (Severe Rhabdomyolysis)',
+        badge: 'Kidney Protection 腎臟保護',
+        goal: '快速清除分子量約 17.8 kDa 的肌紅蛋白（Myoglobin），避免腎小管阻塞與氧化毒性，保護並促進急性腎損傷恢復。',
+        criteria: [
+          '嚴重橫紋肌溶解：Creatine Kinase (CK) > 5,000 U/L',
+          '合併新發腎功能惡化（如 GFR < 40 mL/min 或達 RRT 啟動標準）且 Myoglobin > 10,000 μg/L',
+          '若 Myoglobin > 30,000 μg/L，即使尚未發生嚴重腎衰竭亦可考慮立即啟動（Independent of renal function）'
+        ],
+        timing: '建議於確診或發病後 24 小時內儘早啟動，搶在肌紅蛋白造成不可逆腎小管壞死前攔截清除。',
+        frequency: '初期高濃度肌紅蛋白期，建議每 8 小時更換吸附柱以維持最高清除速率，後續視數值下降幅度調整為 12–24 小時。',
+        stopCriteria: '血中 Myoglobin 持續穩定降至 < 5,000 μg/L（若無法檢測 Myoglobin，則以 CK < 1,000 U/L 作為停用參考）。'
+      },
+      {
+        id: 'antithrombotic',
+        shortTitle: '心臟手術抗血栓藥物清除',
+        fullTitle: '心臟手術術中抗血栓藥物清除 (Antithrombotic Removal in CPB)',
+        badge: 'Cardiovascular 心臟外科',
+        goal: '於緊急心臟手術體外循環期間直接清除抗血小板與抗凝血藥物，顯著降低術中與術後大出血併發症、減少輸血量及 ICU 住院天數。',
+        criteria: [
+          '需接受緊急心臟手術且術前曾服用 P2Y12 抑制劑 Ticagrelor（末次服藥 < 72 小時）',
+          '或術前曾服用第十因子抑制劑 Rivaroxaban（末次服藥 < 48 小時）'
+        ],
+        timing: '手術開始並啟動心肺繞道機（CPB）時同步啟動 CytoSorb®（整合於 CPB 幫浦後至靜脈儲血槽旁路）。',
+        frequency: '術中單支運作（CPB 時間理想建議 > 60 分鐘以確保充分清除）；若術中已完成充分清除，術後通常無需更換新柱繼續使用。',
+        stopCriteria: '隨心肺繞道（CPB）結束並脫離體外循環時同步停止使用。'
+      },
+      {
+        id: 'ie_aortic',
+        shortTitle: '感染性心內膜炎與複雜主動脈手術',
+        fullTitle: '感染性心內膜炎與複雜主動脈手術 (Infective Endocarditis & Complex Aortic Surgery)',
+        badge: 'Cardiovascular 心臟外科',
+        goal: '清除術中細菌毒素（如金黃色葡萄球菌溶血素/毒素）與體外循環誘發之細胞激素風暴，穩定術後血流動力學並保護多重器官功能。',
+        criteria: [
+          '高風險急性/活動性感染性心內膜炎（IE）：合併發燒、發炎指數極高、需高劑量升壓藥或確認為金黃色葡萄球菌感染',
+          '複雜主動脈手術：術前高乳酸、預計執行深低溫停循環（DHCA）、腦部灌流或血流動力學不穩定者'
+        ],
+        timing: '於心臟手術啟動心肺繞道（CPB）當下即刻串接整合，全程進行術中血液淨化。',
+        frequency: '術中全程使用；若術中出現寡尿/無尿腎衰竭、升壓藥（NE/Vasopressin）需求增加、嚴重贅生物/主動脈根部膿瘍或內臟缺血，術後轉入 ICU 應銜接新柱並每 12–24 小時更換。',
+        stopCriteria: '若術中無上述高風險併發症，可於 CPB 結束時停用；若術後於 ICU 延續治療，則依敗血性休克路徑至循環穩定後停用。'
+      },
+      {
+        id: 'ards',
+        shortTitle: '急性呼吸窘迫症候群',
+        fullTitle: '急性呼吸窘迫症候群與重症高發炎反應 (Severe ARDS / Hyperinflammation)',
+        badge: 'Respiratory & ECMO 呼吸重症',
+        goal: '在 VV-ECMO 或機械通氣支持下，快速降低肺部與全身性細胞激素風暴（如 IL-6、IL-8、TNF-α），改善微血管滲漏與肺泡氧合功能。',
+        criteria: [
+          '嚴重急性呼吸窘迫症候群（Severe ARDS）需啟動 VV-ECMO 支持治療',
+          '合併顯著全身性高發炎反應（如 IL-6 ≥ 500 pg/mL、PCT > 3 μg/L、Ferritin > 1,000 μg/L）或次發性血管麻痺性休克'
+        ],
+        timing: '於啟動 VV-ECMO 初期或發現難治性高發炎/休克徵象後 12 小時內，透過 ECMO 旁路分流及早介入。',
+        frequency: '初期高發炎階段建議每 12 小時更換吸附柱（12 hr → 12 hr → 24 hr），隨發炎指數與血管張力改善調整更換間隔。',
+        stopCriteria: '發炎風暴受控、血管加壓素需求穩定下降（NE ≤ 0.05 μg/kg/min）且肺部氧合與循環趨於穩定。'
+      }
+    ];
+
+    let currentIndIndex = 0;
+
+    function renderIndications() {
+      const tabsEl = document.getElementById('indicationTabs');
+      tabsEl.innerHTML = indicationsData.map((item, idx) => `
+        <button type="button" onclick="selectIndication(${idx})"
+          class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition cursor-pointer ${
+            idx === currentIndIndex
+              ? 'bg-cyto-sky text-slate-950 shadow-glow-sky'
+              : 'bg-cyto-navy/80 text-slate-300 border border-sky-400/20 hover:border-sky-400/50 hover:text-white'
+          }">
+          ${idx + 1}. ${item.shortTitle}
+        </button>
+      `).join('');
+
+      const active = indicationsData[currentIndIndex];
+      const detailEl = document.getElementById('indicationDetailCard');
+      detailEl.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-4 border-b border-sky-400/20">
+          <div>
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-sky-500/20 text-cyto-glow text-xs font-bold mb-1.5">${active.badge}</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white">${active.fullTitle}</h3>
+          </div>
+          <span class="text-xs font-mono text-slate-400">0${currentIndIndex + 1} / 06</span>
+        </div>
+
+        <div class="mb-6">
+          <div class="text-xs font-bold text-sky-300 uppercase tracking-wider mb-1">治療核心目標 (Therapy Goal)</div>
+          <p class="text-sm sm:text-base text-slate-200 leading-relaxed">${active.goal}</p>
+        </div>
+
+        <div class="mb-6 p-4 rounded-2xl bg-[#040D1A]/80 border border-sky-400/20">
+          <div class="text-xs font-bold text-cyto-glow uppercase tracking-wider mb-2.5">臨床啟動切點與適用條件 (Clinical Criteria)</div>
+          <ul class="space-y-2 text-sm text-slate-200">
+            ${active.criteria.map(c => `<li class="flex items-start gap-2"><span class="text-cyto-sky font-bold mt-0.5">▸</span><span>${c}</span></li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-2xl bg-sky-950/40 border border-sky-400/20">
+            <div class="flex items-center gap-1.5 text-xs font-extrabold text-cyto-glow mb-1.5">
+              <span>⏱️ 啟動時機 (Timing)</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${active.timing}</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-sky-950/40 border border-sky-400/20">
+            <div class="flex items-center gap-1.5 text-xs font-extrabold text-amber-300 mb-1.5">
+              <span>🔄 吸附器更換頻率</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${active.frequency}</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-sky-950/40 border border-sky-400/20">
+            <div class="flex items-center gap-1.5 text-xs font-extrabold text-emerald-300 mb-1.5">
+              <span>🛑 停用時機 (Stop Criteria)</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${active.stopCriteria}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectIndication(index) {
+      currentIndIndex = index;
+      renderIndications();
+    }
+
+    // ==========================================
+    // 2. 2026 DRUG ADSORPTION DATABASE (B1550R01ENG2026)
+    // ==========================================
+    const drugDatabase = [
+      // Insignificant - In-vivo - Antimicrobials
+      { name: 'Amikacin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Anidulafungin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Cefepime', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Ceftriaxone', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Ciprofloxacine', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Clarithromycin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Clindamycin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Flucloxacillin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Ganciclovir', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Meropenem', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Metronidazole', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Piperacillin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+
+      // Insignificant - In-vivo - Immunosuppressants
+      { name: 'Basiliximab', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Cyclosporine A', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Everolimus', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Methylprednisolon', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Mycophenolate mofetil (MMF)', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Prednisolone', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '動物實驗數據：移除率低，無需調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Tacrolimus', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'insignificant', study: 'In-vivo', advice: '清除增加極微 (<25%) 或移除率低 (<30%)，無需調整劑量*', animal: false, plasmaOnly: false },
+
+      // Insignificant - In-vitro - Cardiovascular & Other
+      { name: 'Adrenaline / Epinephrine', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'insignificant', study: 'In-vitro', advice: '體外移除率 <30%（尚無體內數據），無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Noradrenaline / Norpinephrine', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'insignificant', study: 'In-vitro', advice: '體外移除率 <30%（尚無體內數據），無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Metformin', catEn: 'Other drugs', catZh: '其他藥物', sig: 'insignificant', study: 'In-vitro', advice: '體外移除率 <30%（尚無體內數據），無需調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Paracetamol (Acetaminophen)', catEn: 'Other drugs', catZh: '其他藥物', sig: 'insignificant', study: 'In-vitro', advice: '體外移除率 <30%（尚無體內數據），無需調整劑量*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vivo - Antimicrobials
+      { name: 'Amphotericin B', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '動物實驗：清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Cefiderocol', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Ceftazidime', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Fluconazole', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Levofloxacin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '動物實驗：清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Linezolid', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Posaconazole', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '動物實驗：清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Teicoplanin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Tobramycin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '動物實驗：清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: true, plasmaOnly: false },
+      { name: 'Vancomycin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量（強烈建議搭配 TDM）*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vivo - Antithrombotics/Anticoagulants
+      { name: 'Apixaban', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Bivalirudin', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Ticagrelor', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vivo', advice: '核心目標清除藥物（僅具系統血漿濃度數據），建議評估調整劑量*', animal: false, plasmaOnly: true },
+
+      // Significant - In-vivo - Cardiovascular Drugs
+      { name: 'Amlodipin', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%（僅系統血漿濃度數據），建議調整劑量*', animal: false, plasmaOnly: true },
+      { name: 'Bisoprolol', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%（僅系統血漿濃度數據），建議調整劑量*', animal: false, plasmaOnly: true },
+      { name: 'Digitoxin', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Digoxin', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%（僅系統血漿濃度數據），建議調整劑量*', animal: false, plasmaOnly: true },
+      { name: 'Flecainide', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Verapamil', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%（僅系統血漿濃度數據），建議調整劑量*', animal: false, plasmaOnly: true },
+
+      // Significant - In-vivo - Antiepileptic/Antidepressant
+      { name: 'Amitriptyline', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Bromazepam', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Clozapine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Imipramine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Lamotrigine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Quetiapine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Valproic acid', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%，建議調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Venlafaxine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%（僅系統血漿濃度數據），建議調整劑量*', animal: false, plasmaOnly: true },
+
+      // Significant - In-vivo - Other
+      { name: 'Ibuprofen', catEn: 'Other drugs', catZh: '其他藥物', sig: 'significant', study: 'In-vivo', advice: '清除率增加 >25% 或移除率 >30%（僅系統血漿濃度數據），建議調整劑量*', animal: false, plasmaOnly: true },
+
+      // Significant - In-vitro - Antimicrobials
+      { name: 'Cefotaxime', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Cefuroxime', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Gentamycin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Moxifloxacin', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Remdesivir / GS-441524', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Voriconazole', catEn: 'Antimicrobials', catZh: '抗生素/抗感染藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vitro - Antithrombotics/Anticoagulants
+      { name: 'Argatroban', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Dabigatran', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Edoxaban', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Rivaroxaban', catEn: 'Antithrombotics / Anticoagulants', catZh: '抗血栓/抗凝血劑', sig: 'significant', study: 'In-vitro', advice: '核心目標清除藥物（體外移除率 >30%），可能需要調整劑量*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vitro - Cardiovascular Drugs
+      { name: 'Amiodarone', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Levosimendan', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Methylene blue', catEn: 'Cardiovascular Drugs', catZh: '心血管用藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vitro - Antiepileptic/Antidepressant
+      { name: 'Carbamazepine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Diazepam', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Oxcarbazepine', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Phenytoin', catEn: 'Antiepileptic / Antidepressant', catZh: '抗癲癇/抗憂鬱藥', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vitro - Immunosuppressants
+      { name: 'Mercaptopurine', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Methotrexate', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+      { name: 'Sirolimus', catEn: 'Immunosuppressants', catZh: '免疫抑制劑', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false },
+
+      // Significant - In-vitro - Other
+      { name: 'Iodixanol', catEn: 'Other drugs', catZh: '其他藥物', sig: 'significant', study: 'In-vitro', advice: '體外移除率 >30%（尚無體內數據），可能需要調整劑量*', animal: false, plasmaOnly: false }
+    ];
+
+    let currentSigFilter = 'all';
+    let currentCatFilter = 'ALL';
+
+    const drugCategories = [
+      { key: 'ALL', label: '全部分類' },
+      { key: 'Antimicrobials', label: '抗生素/抗感染藥 Antimicrobials' },
+      { key: 'Antithrombotics / Anticoagulants', label: '抗血栓/抗凝血劑 Antithrombotics' },
+      { key: 'Cardiovascular Drugs', label: '心血管用藥 Cardiovascular' },
+      { key: 'Antiepileptic / Antidepressant', label: '抗癲癇/抗憂鬱藥 CNS' },
+      { key: 'Immunosuppressants', label: '免疫抑制劑 Immunosuppressants' },
+      { key: 'Other drugs', label: '其他藥物 Other' }
+    ];
+
+    function initDrugSection() {
+      document.getElementById('countAll').textContent = drugDatabase.length;
+      document.getElementById('countSig').textContent = drugDatabase.filter(d => d.sig === 'significant').length;
+      document.getElementById('countInsig').textContent = drugDatabase.filter(d => d.sig === 'insignificant').length;
+
+      const catTabs = document.getElementById('drugCatTabs');
+      catTabs.innerHTML = drugCategories.map(c => `
+        <button type="button" onclick="setCatFilter('${c.key}')" data-cat="${c.key}"
+          class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition cursor-pointer ${
+            c.key === 'ALL'
+              ? 'bg-sky-500/25 text-cyto-glow border border-sky-400/40'
+              : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-slate-200'
+          }">
+          ${c.label}
+        </button>
+      `).join('');
+
+      renderDrugs();
+    }
+
+    function setSigFilter(sig) {
+      currentSigFilter = sig;
+      document.querySelectorAll('.sig-btn').forEach(btn => {
+        const isTarget = btn.getAttribute('data-sig') === sig;
+        if (isTarget) {
+          btn.classList.add('ring-2', 'ring-white/60');
+        } else {
+          btn.classList.remove('ring-2', 'ring-white/60');
+        }
+      });
+      renderDrugs();
+    }
+
+    function setCatFilter(cat) {
+      currentCatFilter = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        const isTarget = btn.getAttribute('data-cat') === cat;
+        btn.className = `cat-btn px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition cursor-pointer ${
+          isTarget
+            ? 'bg-sky-500/25 text-cyto-glow border border-sky-400/40'
+            : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-slate-200'
+        }`;
+      });
+      renderDrugs();
+    }
+
+    function clearDrugSearch() {
+      const input = document.getElementById('drugSearchInput');
+      input.value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      renderDrugs();
+    }
+
+    document.getElementById('drugSearchInput').addEventListener('input', function(e) {
+      const btn = document.getElementById('clearSearchBtn');
+      if (e.target.value.trim().length > 0) {
+        btn.classList.remove('hidden');
+      } else {
+        btn.classList.add('hidden');
+      }
+      renderDrugs();
+    });
+
+    function renderDrugs() {
+      const query = document.getElementById('drugSearchInput').value.trim().toLowerCase();
+      const filtered = drugDatabase.filter(d => {
+        const matchSig = currentSigFilter === 'all' || d.sig === currentSigFilter;
+        const matchCat = currentCatFilter === 'ALL' || d.catEn === currentCatFilter;
+        const matchText = !query ||
+          d.name.toLowerCase().includes(query) ||
+          d.catEn.toLowerCase().includes(query) ||
+          d.catZh.toLowerCase().includes(query);
+        return matchSig && matchCat && matchText;
+      });
+
+      const container = document.getElementById('drugResultsContainer');
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-400 text-sm">
+            找不到符合「<span class="text-white font-semibold">${query}</span>」的藥物資料，請嘗試其他英文學名或切換篩選條件。
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(d => {
+        const isSig = d.sig === 'significant';
+        return `
+          <div class="p-4 rounded-2xl bg-[#071428]/90 border ${isSig ? 'border-amber-400/30' : 'border-emerald-400/25'} flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-1.5">
+                <h4 class="text-base font-bold text-white ${d.animal ? 'italic' : ''}">
+                  ${d.name}${d.plasmaOnly ? '<sup class="text-cyto-glow ml-0.5">**</sup>' : ''}
+                </h4>
+                <span class="shrink-0 px-2 py-0.5 rounded-md text-[10px] font-bold ${
+                  d.study === 'In-vivo' ? 'bg-sky-500/20 text-sky-300' : 'bg-indigo-500/20 text-indigo-300'
+                }">
+                  ${d.study}
+                </span>
+              </div>
+              <div class="text-xs text-sky-300/90 font-medium mb-2.5">${d.catZh} <span class="text-slate-500">(${d.catEn})</span></div>
+            </div>
+            <div class="pt-2.5 border-t border-white/10 flex items-start gap-1.5 text-xs ${isSig ? 'text-amber-300' : 'text-emerald-300'}">
+              <span class="font-bold shrink-0">${isSig ? '⚠️' : '✓'}</span>
+              <span class="leading-snug">${d.advice}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==========================================
+    // 3. BENTO CARD EXPAND TOGGLE
+    // ==========================================
+    function toggleBento(cardEl) {
+      const detail = cardEl.querySelector('.bento-detail');
+      if (!detail) return;
+      const isHidden = detail.classList.contains('hidden');
+      detail.classList.toggle('hidden');
+      if (isHidden) {
+        cardEl.classList.add('active');
+      } else {
+        cardEl.classList.remove('active');
+      }
+    }
+
+    // ==========================================
+    // 4. LITERATURE REFERENCE MODAL (Exact 6-Indication Order)
+    // ==========================================
+    let currentLitIndex = 0;
+
+    function openLitModal() {
+      const modal = document.getElementById('litModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      renderLitModal();
+    }
+
+    function closeLitModal() {
+      const modal = document.getElementById('litModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function selectLitCategory(idx) {
+      currentLitIndex = idx;
+      renderLitModal();
+    }
+
+    function renderLitModal() {
+      const tabsEl = document.getElementById('litCategoryTabs');
+      tabsEl.innerHTML = indicationsData.map((item, idx) => `
+        <button type="button" onclick="selectLitCategory(${idx})"
+          class="px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${
+            idx === currentLitIndex
+              ? 'bg-cyto-sky text-slate-950'
+              : 'bg-cyto-navy text-slate-300 border border-sky-400/20 hover:text-white'
+          }">
+          ${idx + 1}. ${item.shortTitle}
+        </button>
+      `).join('');
+
+      const active = indicationsData[currentLitIndex];
+      const contentEl = document.getElementById('litContentArea');
+      contentEl.innerHTML = `
+        <div class="w-14 h-14 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-2xl mb-4">
+          📚
+        </div>
+        <span class="text-xs font-bold text-cyto-glow mb-1">${active.fullTitle}</span>
+        <h4 class="text-lg font-bold text-white mb-2">精選臨床實證文獻整理中</h4>
+        <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+          本分類之國際期刊摘要與臨床試驗數據正在建置中，敬請期待（Coming Soon）。<br/>
+          如需立即索取該適應症之完整文獻清單，歡迎點擊頁尾「官方線上諮詢」聯繫英禾美生醫產品專員。
+        </p>
+      `;
+    }
+
+    // Close modal when clicking backdrop
+    document.getElementById('litModal').addEventListener('click', function(e) {
+      if (e.target === this) closeLitModal();
+    });
+
+    // ==========================================
+    // 5. SCROLL REVEAL ANIMATION
+    // ==========================================
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Initialize Sections
+    renderIndications();
+    initDrugSection();
+  </script>
+</body>
+</html>
