@@ -497,11 +497,11 @@
         shortTitle: '敗血症與血管麻痺性休克',
         fullTitle: '敗血症與血管麻痺性休克 (Septic / Vasoplegic Shock)',
         badge: 'Critical Care 重症加護',
-        goal: '抑制過度發炎風暴（Hyperinflammation）、快速降低升壓藥物需求、改善微循環與大循環灌流，促進休克逆轉。',
+        goal: '抑制過度發炎風暴、快速降低升壓藥物需求、改善微循環與大循環灌流，促進休克逆轉。',
         criteria: [
           'Norepinephrine (NE) 劑量 ≥ 0.2 μg/kg/min 且持續上升',
-          '血中乳酸 Lactate ≥ 2 mmol/L 或持續上升（建議勿等到 > 8 mmol/L 才啟動）',
-          '發炎指標：IL-6 ≥ 500 pg/mL 或 Procalcitonin (PCT) > 3 μg/L',
+          '血中乳酸 Lactate ≥ 2 mmol/L 或持續上升',
+          '發炎指標：IL-6 ≥ 500 pg/mL、Procalcitonin (PCT) > 3 μg/L或Ferritin > 1,000 μg/L',
           'CytoScore 評估（啟動標準治療後 6 小時）> 6 分'
         ],
         timing: '診斷敗血性/血管麻痺性休克並啟動標準治療後，建議於 12 小時內及早介入（愈早啟動、未達不可逆器官損傷前效果最佳）。',
@@ -513,11 +513,11 @@
         shortTitle: '急性肝臟衰竭',
         fullTitle: '急性肝臟衰竭與高膽紅素血症 (Liver Dysfunction / ACLF)',
         badge: 'Liver Support 肝臟支持',
-        goal: '快速清除膽紅素（Bilirubin）與肝毒素、減緩全身性發炎反應，作為肝功能恢復或等待肝臟移植之重要橋接（Bridge to recovery / transplant）。',
+        goal: '快速清除膽紅素（Bilirubin）與膽酸(Bile Acid)、減緩全身性發炎反應，作為肝功能恢復或等待肝臟移植之重要橋接（Bridge to recovery / transplant）。',
         criteria: [
           '總膽紅素 Bilirubin ≥ 10 mg/dL（> 170 μmol/L）',
           '肝性腦病變（Hepatic Encephalopathy, HE）Grade ≥ 2',
-          '急性肝衰竭（ALF）或慢加急性肝衰竭（ACLF Grade 2–3）、術後或移植後肝功能不全',
+          '急性肝衰竭或慢加急性肝衰竭發作分期達Grade 2–3、術後或移植後肝功能不全',
           '合併難治性血管麻痺性休克或頑固性膽汁鬱積搔癢症'
         ],
         timing: '確認無不可逆器官損傷後及早啟動；若合併血管麻痺性休克，建議於 24 小時內串接 CKRT、ECMO 或獨立血液灌流。',
@@ -527,12 +527,12 @@
       {
         id: 'rhabdo',
         shortTitle: '橫紋肌溶解症',
-        fullTitle: '嚴重橫紋肌溶解症 (Severe Rhabdomyolysis)',
+        fullTitle: '橫紋肌溶解症 (Rhabdomyolysis)',
         badge: 'Kidney Protection 腎臟保護',
-        goal: '快速清除分子量約 17.8 kDa 的肌紅蛋白（Myoglobin），避免腎小管阻塞與氧化毒性，保護並促進急性腎損傷恢復。',
+        goal: '快速清除肌紅蛋白（Myoglobin），避免腎小管阻塞與氧化毒性，保護並促進急性腎損傷恢復，避免長期透析風險。',
         criteria: [
           '嚴重橫紋肌溶解：Creatine Kinase (CK) > 5,000 U/L',
-          '合併新發腎功能惡化（如 GFR < 40 mL/min 或達 RRT 啟動標準）且 Myoglobin > 10,000 μg/L',
+          '合併新發腎功能惡化（如 GFR < 40 mL/min）且 Myoglobin > 10,000 μg/L',
           '若 Myoglobin > 30,000 μg/L，即使尚未發生嚴重腎衰竭亦可考慮立即啟動（Independent of renal function）'
         ],
         timing: '建議於確診或發病後 24 小時內儘早啟動，搶在肌紅蛋白造成不可逆腎小管壞死前攔截清除。',
@@ -551,7 +551,7 @@
           '此為健保給付之項目'
         ],
         timing: '手術開始並啟動心肺繞道機（CPB）時同步啟動 CytoSorb®（整合於 CPB 幫浦後至靜脈儲血槽旁路）。',
-        frequency: '術中單支運作（CPB 時間理想建議 > 90-120 分鐘以確保充分清除）；若術中已完成充分清除，術後通常無需更換新柱繼續使用。',
+        frequency: '術中單支運作時間理想建議 > 90-120 分鐘以確保充分清除；若術中已完成充分清除，術後通常無需更換新柱繼續使用。',
         stopCriteria: '隨心肺繞道（CPB）結束並脫離體外循環時同步停止使用。'
       },
       {
@@ -564,8 +564,8 @@
           '高風險急性/活動性感染性心內膜炎（IE）：合併發燒、發炎指數極高、需高劑量升壓藥或確認為金黃色葡萄球菌感染',
           '複雜主動脈手術：術前高乳酸、預計執行深低溫停循環（DHCA）、腦部灌流或血流動力學不穩定者'
         ],
-        timing: '於心臟手術啟動心肺繞道（CPB）當下即刻串接整合，全程進行術中血液淨化。',
-        frequency: '術中全程使用；若術中出現寡尿/無尿腎衰竭、升壓藥（NE/Vasopressin）需求增加、嚴重贅生物/主動脈根部膿瘍或內臟缺血，術後轉入 ICU 應銜接新柱並每 12–24 小時更換。',
+        timing: '於心臟手術啟動心肺繞道（CPB）當下即刻串接整合，全程進行術中血液吸附。',
+        frequency: '術中全程使用；若術中出現寡尿/無尿腎衰竭、升壓藥需求增加、嚴重贅生物/主動脈根部膿瘍或內臟缺血，術後轉入 ICU 應銜接新吸附器並每 12–24 小時更換。',
         stopCriteria: '若術中無上述高風險併發症，可於 CPB 結束時停用；若術後於 ICU 延續治療，則依敗血性休克路徑至循環穩定後停用。'
       },
       {
@@ -579,7 +579,7 @@
           '合併顯著全身性高發炎反應（如 IL-6 ≥ 500 pg/mL、PCT > 3 μg/L、Ferritin > 1,000 μg/L）或次發性血管麻痺性休克'
         ],
         timing: '於啟動 VV-ECMO 初期或發現難治性高發炎/休克徵象後 12 小時內，透過 ECMO 旁路分流及早介入。',
-        frequency: '初期高發炎階段建議每 12 小時更換吸附柱（12 hr → 12 hr → 24 hr），隨發炎指數與血管張力改善調整更換間隔。',
+        frequency: '初期高發炎階段建議每 12 小時更換吸附器（12 hr → 12 hr → 24 hr），隨發炎指數與血管張力改善調整更換間隔。',
         stopCriteria: '發炎風暴受控、血管加壓素需求穩定下降（NE ≤ 0.05 μg/kg/min）且肺部氧合與循環趨於穩定。'
       }
     ];
