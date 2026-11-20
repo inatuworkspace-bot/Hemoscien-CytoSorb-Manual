@@ -477,8 +477,8 @@
         <!-- Populated by JS -->
       </div>
 
-      <!-- Placeholder Content Area -->
-      <div id="litContentArea" class="py-10 px-4 text-center flex-1 overflow-y-auto flex flex-col items-center justify-center">
+    <!-- Literature List Content Area -->
+      <div id="litContentArea" class="py-4 px-1 flex-1 overflow-y-auto space-y-3 text-left">
         <!-- Populated by JS -->
       </div>
 
@@ -895,9 +895,31 @@
       }
     }
 
+// ==========================================
+    // 4. LITERATURE REFERENCE MODAL (Structured Data + Expandable Cards)
     // ==========================================
-    // 4. LITERATURE REFERENCE MODAL (Exact 6-Indication Order)
-    // ==========================================
+    // 【日後新增文獻區】只要在對應的適應症分類（sepsis / liver / rhabdo / antithrombotic / ie_aortic / ards）內複製貼上一個 { ... } 區塊即可！
+    const literatureDatabase = {
+      sepsis: [],
+      liver: [],
+      rhabdo: [],
+      antithrombotic: [
+        {
+          tag: '體外循環實驗研究 In-vitro Bench Study',
+          year: '2019',
+          author: 'Tripathi et al. • Eur J Cardiothorac Surg',
+          headline: '多孔聚合物微珠血液吸附可於體外循環中快速清除 Ticagrelor 與 Rivaroxaban',
+          title: 'Antithrombotic drug removal from whole blood using Haemoadsorption with a porous polymer bead sorbent',
+          design: '體外全血循環（In-vitro closed-loop bench circuit）實驗，將添加臨床治療濃度 Ticagrelor 或 Rivaroxaban 之人類全血，以 300 mL/min 流速通過 CytoSorb® 吸附柱並於多時間點採樣分析。',
+          results: '循環 30 分鐘內即可清除超過 95% 的 Ticagrelor 與 Rivaroxaban；至 60 分鐘時血中藥物濃度降至幾近無法測得（>99% 移除率），且對血球計數與總蛋白無顯著不良影響。',
+          conclusion: 'CytoSorb® 血液吸附技術能高效、快速地從全血中移除新型抗血小板藥物（Ticagrelor）與直接口服抗凝血劑（Rivaroxaban），具備降低緊急心臟手術出血風險之臨床應用潛力。',
+          url: 'https://pubmed.ncbi.nlm.nih.gov/30684482/'
+        }
+      ],
+      ie_aortic: [],
+      ards: []
+    };
+
     let currentLitIndex = 0;
 
     function openLitModal() {
@@ -920,34 +942,97 @@
       renderLitModal();
     }
 
-    function renderLitModal() {
-      const tabsEl = document.getElementById('litCategoryTabs');
-      tabsEl.innerHTML = indicationsData.map((item, idx) => `
-        <button type="button" onclick="selectLitCategory(${idx})"
-          class="w-full px-2.5 py-2.5 rounded-xl text-xs font-bold text-center leading-snug transition cursor-pointer flex items-center justify-center ${
-            idx === currentLitIndex
-              ? 'bg-cyto-sky text-slate-950'
-              : 'bg-cyto-navy text-slate-300 border border-sky-400/20 hover:text-white'
-          }">
-          <span>${idx + 1}. ${item.shortTitle}</span>
-        </button>
-      `).join('');
-
-      const active = indicationsData[currentLitIndex];
-      const contentEl = document.getElementById('litContentArea');
-      contentEl.innerHTML = `
-        <div class="w-14 h-14 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-2xl mb-4">
-          📚
-        </div>
-        <span class="text-xs font-bold text-cyto-glow mb-1">${active.fullTitle}</span>
-        <h4 class="text-lg font-bold text-white mb-2">精選臨床實證文獻整理中</h4>
-        <p class="text-sm text-slate-400 max-w-md leading-relaxed">
-          本分類之國際期刊摘要與臨床試驗數據正在建置中，敬請期待。<br/>
-          如需立即索取該適應症之完整文獻，歡迎點擊頁尾「官方線上諮詢」聯繫英禾美生醫產品專員。
-        </p>
-      `;
+    function toggleLitCard(cardEl) {
+      const detail = cardEl.querySelector('.lit-detail');
+      const arrow = cardEl.querySelector('.lit-arrow');
+      if (!detail) return;
+      const isHidden = detail.classList.contains('hidden');
+      detail.classList.toggle('hidden');
+      if (arrow) arrow.textContent = isHidden ? '收合 ▲' : '展開詳情 ▾';
     }
 
+    function renderLitModal() {
+      const tabsEl = document.getElementById('litCategoryTabs');
+      tabsEl.innerHTML = indicationsData.map((item, idx) => {
+        const count = (literatureDatabase[item.id] || []).length;
+        return `
+          <button type="button" onclick="selectLitCategory(${idx})"
+            class="w-full px-2.5 py-2.5 rounded-xl text-xs font-bold text-center leading-snug transition cursor-pointer flex items-center justify-center gap-1 ${
+              idx === currentLitIndex
+                ? 'bg-cyto-sky text-slate-950'
+                : 'bg-cyto-navy text-slate-300 border border-sky-400/20 hover:text-white'
+            }">
+            <span>${idx + 1}. ${item.shortTitle}</span>
+            ${count > 0 ? `<span class="px-1.5 py-0.2 rounded-full text-[10px] ${idx === currentLitIndex ? 'bg-slate-950/20 text-slate-950' : 'bg-sky-500/20 text-cyto-glow'}">${count}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      const active = indicationsData[currentLitIndex];
+      const papers = literatureDatabase[active.id] || [];
+      const contentEl = document.getElementById('litContentArea');
+
+      if (papers.length === 0) {
+        contentEl.innerHTML = `
+          <div class="py-10 px-4 text-center flex flex-col items-center justify-center">
+            <div class="w-14 h-14 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-2xl mb-4">
+              📚
+            </div>
+            <span class="text-xs font-bold text-cyto-glow mb-1">${active.fullTitle}</span>
+            <h4 class="text-lg font-bold text-white mb-2">精選臨床實證文獻整理中</h4>
+            <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+              本分類之國際期刊摘要與臨床試驗數據正在建置中，敬請期待。<br/>
+              如需立即索取該適應症之完整文獻，歡迎點擊頁尾「官方線上諮詢」聯繫英禾美生醫產品專員。
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      contentEl.innerHTML = papers.map((p) => `
+        <div onclick="toggleLitCard(this)" class="p-4 sm:p-5 rounded-2xl bg-[#0B1D3A]/85 border border-sky-400/25 hover:border-cyto-glow/60 transition cursor-pointer">
+          <!-- Top Badges -->
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-cyto-glow text-[11px] font-bold">${p.tag}</span>
+              <span class="text-xs text-slate-400 font-medium">${p.year} • ${p.author}</span>
+            </div>
+            <span class="lit-arrow text-xs text-cyto-glow font-semibold">展開詳情 ▾</span>
+          </div>
+
+          <!-- Core Chinese Takeaway -->
+          <h4 class="text-base font-bold text-white leading-snug mb-1.5">${p.headline}</h4>
+
+          <!-- Original English Title -->
+          <p class="text-xs text-slate-400 italic leading-relaxed">${p.title}</p>
+
+          <!-- Expandable Details (Design / Results / Conclusion) -->
+          <div class="lit-detail hidden mt-4 pt-4 border-t border-sky-400/20 space-y-2.5 text-xs sm:text-sm leading-relaxed" onclick="event.stopPropagation()">
+            <div class="p-3 rounded-xl bg-slate-950/60">
+              <span class="text-cyto-glow font-bold block mb-0.5">🔬 研究設計 (Study Design)</span>
+              <p class="text-slate-300">${p.design}</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/60">
+              <span class="text-amber-300 font-bold block mb-0.5">📊 研究結果 (Key Results)</span>
+              <p class="text-slate-300">${p.results}</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/60">
+              <span class="text-emerald-300 font-bold block mb-0.5">💡 臨床結論 (Conclusion)</span>
+              <p class="text-slate-300">${p.conclusion}</p>
+            </div>
+            ${p.url ? `
+              <div class="pt-1 flex justify-end">
+                <a href="${p.url}" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/40 text-cyto-glow text-xs font-bold transition">
+                  <span>查看原文 / PubMed 連結</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
     // Close modal when clicking backdrop
     document.getElementById('litModal').addEventListener('click', function(e) {
       if (e.target === this) closeLitModal();
