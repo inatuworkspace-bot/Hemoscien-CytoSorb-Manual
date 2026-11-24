@@ -913,19 +913,119 @@
     // 【日後新增文獻區】只要在對應的適應症分類（sepsis / liver / rhabdo / antithrombotic / ie_aortic / ards）內複製貼上一個 { ... } 區塊即可！
     const literatureDatabase = {
       sepsis: [],
-      liver: [],
+      liver: [
+        {
+          tag: '回溯性觀察研究',
+          year: '2025',
+          author: 'Haselwanter P et al.',
+          headline: '評估 CytoSorb 在急性肝衰竭患者中的可行性、安全性，以及對肝功能生化指標與臨床結果的影響。',
+          title: 'Feasibility and Safety of Cytosorb Application in Patients With Acute Liver Failure',
+          design: '比較 14 名接受 CytoSorb 合併 CRRT 與 14 名單獨接受連續性腎臟替代療法（CRRT）之 ALF 患者。',
+          results: '膽紅素顯著下降：24小時由20.85 mg/dL⇒12.32 mg/dL，治療後降至9.46 mg/dL；p < 0.001。安全性表現：兩組出血、檸檬酸鹽蓄積或血小板減少等併發症發生率相似。存活率：Cytosorb組的ICU存活率（71.4% vs. 42.9%；p  = 0.127）及6 個月存活率較高（71.4% vs. 28.6%, p=0.023）。',
+          conclusion: 'CytoSorb 耐受性良好且可行，可改善生化指標並維持血液動力學穩定，可能對急性肝衰竭患者有益。',
+          url: 'https://doi.org/10.1111/liv.70420'
+        },
+        {
+          tag: '回溯性觀察研究',
+          year: '2024',
+          author: 'Haselwanter P et al.',
+          headline: '評估2017–2023 年 CytoSorb 在 ACLF 患者中的應用，以及治療前後膽紅素、發炎介質及其他生化指標的變化。',
+          title: 'Use of the CytoSorb adsorber in patients with acute-on-chronic liver failure',
+          design: '比較28 位急性肝衰竭（ALF）患者，其中 14 位接受 CRRT 合併 CytoSorb，另外 14 位接受 CRRT 但未使用 CytoSorb。',
+          results: '臨床預後：與對照組相比，CytoSorb® 組患者的加護病房住院時間較短，存活率較高。膽紅素下降幅度顯著低於對照組。兩組患者的血小板計數均下降，但未出現出血或其他併發症。評估項目（治療前 / 治療後 / 變化(%)）：Total bilirubin：20.7 / 10.8 / ↓47.8；Procalcitonin：1.34 / 0.74 / ↓44.6；IL-6：385 / 131 / ↓66.0；Fibrinogen：230 / 154 / ↓33.0。',
+          conclusion: '在ACLF患者中使用CytoSorb吸附劑可顯著降低膽紅素和促發炎細胞因子水平，同時纖維蛋白原水平也降低。',
+          url: 'https://doi.org/10.1038/s41598-024-61658-3'
+        },
+        {
+          tag: '回溯性傾向匹配分析',
+          year: '2023',
+          author: 'Popescu M et al.',
+          headline: '比較 CytoSorb® 與分子吸附再循環系統（MARS）對重症肝衰竭患者肝功能與器官衰竭之療效。',
+          title: 'Artificial liver support with CytoSorb and MARS in liver failure',
+          design: '納入 30 名重症肝衰竭患者，經傾向評分匹配分為 CytoSorb 組（15 名）與 MARS 組（15 名）。',
+          results: '生化清除：完成整個治療療程後 CytoSorb 組： - Lactate 顯著下降，P=0.01。 - Bilirubin 顯著下降，P=0.01。 - Ammonia 顯著下降，P=0.02。 - LDH 顯著下降，P=0.01。 - MELD score 下降10分，P=0.04。 - MARS 組：肝功能生化指標未見顯著改善。',
+          conclusion: '相較於 MARS，CytoSorb 在重新平衡肝功能生化指標與降低 MELD 評分具潛在優勢，但對存活率及住院時間的影響仍需要大型隨機對照試驗確認。',
+          url: 'https://doi.org/10.3390/jcm12062258'
+        },
+        {
+          tag: '前瞻性病例系列研究',
+          year: '2021',
+          author: 'Tomescu D et al.',
+          headline: '評估 CytoSorb® 血液吸附治療對急性肝衰竭（ALF）患者生化指標與臨床表現之影響。',
+          title: 'Hemoadsorption by CytoSorb® in patients with acute liver failure: A case series',
+          design: '前瞻性納入 28 名 ALF 患者，接受連續 3 次各 24 小時 CVVH 合併 CytoSorb® 治療。',
+          results: '生化顯著改善：膽紅素（p=0.03）、血氨（p=0.01）顯著降低以及在急性腎衰竭患者（n = 13）中觀察到肌酸酐（p=0.02）顯著下降。發炎與器官評分：CRP（p=0.02）數值顯著降低與 SOFA 肝臟部分評分（p=0.04）顯著改善。注意事項：觀察到血小板計數下降，治療前需評估。',
+          conclusion: 'CytoSorb® 可作為治療肝功能損害，進行肝功能控制或輔助肝臟移植過渡治療方案。',
+          url: 'https://doi.org/10.1177/0391398820981383'
+        }
+      ],
       rhabdo: [],
       antithrombotic: [
         {
-          tag: '體外循環實驗研究 In-vitro Bench Study',
+          tag: '體外實驗研究（In vitro study）',
           year: '2022',
-          author: 'Tripathi et al. • Eur J Cardiothorac Surg',
-          headline: '使用多孔聚合物微珠吸附劑進行血液吸附以從全血中移除抗血栓藥物',
+          author: 'Tripathi R et al.',
+          headline: '評估採用多孔聚合物微珠吸附技術的血液吸附裝置，從全血中移除常用抗血栓藥物Apixaban、Rivaroxaban、Ticagrelor之效率與血液相容性。',
           title: 'Antithrombotic drug removal from whole blood using Haemoadsorption with a porous polymer bead sorbent',
-          design: '體外全血循環實驗，將添加臨床治療濃度 Ticagrelor/Rivaroxaban/Apixaban 之人類全血，以 300 mL/min 流速通過 CytoSorb® 吸附柱並於多時間點採樣分析。',
-          results: '循環 60 分鐘內即可清除超過 95% 的 Rivaroxaban 與 Apixaban，以及75% 的Ticagrelor，且與對照迴路相比，使用該血液吸附裝置對血液 pH 值及血液學參數均無顯著影響。',
-          conclusion: 'CytoSorb® 血液吸附技術能高效、快速地從全血中移除新型抗血小板藥物（Ticagrelor）與直接口服抗凝血劑（Rivaroxaban），具備降低緊急心臟手術出血風險之臨床應用潛力。',
-          url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9716861/'
+          design: '在臨體外循環模型中，分別將含有Apixaban、Rivaroxaban 或 Ticagrelor 的牛全血，以 300 mL/min 流速連續循環通過吸附裝置，與對照組比較分析，並監測 6 小時內的藥物濃度變化與血液學參數。',
+          results: '測試藥物 30 分鐘 / 60 分鐘 / 120 分鐘 / 360 分鐘 / P 值 (vs. 對照組)：Apixaban：81.5% / 96.3% / 99.3% / >99.8% / p < 0.0001；Rivaroxaban：80.7% / 95.1% / 98.9% / >99.5% / p < 0.0001；Ticagrelor：62.5% / 75.0% / 86.6% / >95.0% / p < 0.0001。血液相容性：與對照組相比，使用該血液吸附裝置對血液 pH 值及常規血液學參數均無顯著影響。',
+          conclusion: '在臨床規模體外循環迴路中，多孔聚合物微珠血液吸附裝置能有效移除全血中的 Apixaban、Rivaroxaban 及 Ticagrelor，且絕大部分的藥物清除發生在治療後的前 60 分鐘內，同時維持穩定的血液學指標。',
+          url: 'https://doi.org/10.1093/ehjcvp/pvac036'
+        },
+        {
+          tag: '體外實驗研究（In vitro study）',
+          year: '2017',
+          author: 'Angheloiu GO et al.',
+          headline: '評估使用CytoSorb 從牛血清白蛋白（BSA）溶液及人類血液樣本中移除抗血小板藥物 Ticagrelor 之效率。',
+          title: 'Ticagrelor Removal From Human Blood',
+          design: '進行兩組體外實驗：以含有 Ticagrelor（19.14 μmol/L）之 4% 及 0.4% BSA 溶液進行單次通過吸附實驗100 分鐘。將人類全血混入 Ticagrelor（平均濃度 70 ± 0.69 μmol/L），透過 CytoSorb 管柱進行 10 小時封閉循環吸附實驗（共 3 種流速與管柱容量模型）。',
+          results: '人類全血清除率： 在 10 小時循環實驗中，CytoSorb 對全血中 Ticagrelor 的最高清除率達 99%；在 3 至 4 小時內清除率即達 90-94%。觀察到和Ticagrelor幾乎完全清除相比，白蛋白的下降幅度相當小（<10%）。',
+          conclusion: '體外實驗證實，使用 CytoSorb 進行血液吸附可有效且大量地從牛血清白蛋白溶液及人類全血／血漿樣本中移除 Ticagrelor，此方法可用於心臟手術等緊急情況下，降低患者出血風險。',
+          url: 'https://doi.org/10.1016/j.jacbts.2017.01.007'
+        },
+        {
+          tag: '回溯性觀察研究',
+          year: '2022',
+          author: 'Hassan K et al.',
+          headline: '評估術中使用 CytoSorb 吸附劑對服用 Ticagrelor 或 Rivaroxaban 接受急性 A 型主動脈剝離手術患者之出血與預後影響。',
+          title: 'Hemoadsorption of Rivaroxaban and Ticagrelor during Acute Type A Aortic Dissection Operations',
+          design: '納入 21 名服用 Ticagrelor 或 Rivaroxaban 的急性 A 型主動脈剝離手術患者，比較術中合併 CytoSorb 組（11 例）與未吸附組（10 例）。',
+          results: '出血與引流：有效預防大出血，24 小時胸管引流量顯著減少（p = 0.004）。輸血與再手術：紅血球及血小板輸注需求較低，無二次開胸止血（0% vs. 30%）。臨床預後：手術時間較短，且院內死亡率較低（0% vs. 20%）。',
+          conclusion: '服用 Ticagrelor 或 Rivaroxaban 之急性 A 型主動脈剝離手術，術中吸附能有效預防大出血、顯著減少胸管引流量並改善預後。',
+          url: 'https://doi.org/10.5761/atcs.oa.21-00154'
+        },
+        {
+          tag: '回溯性觀察研究',
+          year: '2019',
+          author: 'Hassan K et al.',
+          headline: '分析因使用抗凝血／抗血小板藥物而具有高出血風險的患者，在接受緊急開心手術期間於體外循環安裝 CytoSorb 吸附器之臨床結果。',
+          title: 'Cytosorb Adsorption During Emergency Cardiac Operations in Patients at High Risk of Bleeding',
+          design: '調查 2016 年 6 月至 2018 年 6 月間接受緊急心臟手術的 55 名連續患者（術前皆接受 Ticagrelor [n = 43] 或 Rivaroxaban [n = 12] 治療）。比較術中於心肺機安裝標準化 CytoSorb 吸附組（n = 39）與未使用吸附對照組（n = 16）的手術及術後相關併發症。',
+          results: '二次開胸與引流量： CytoSorb 組無任何患者需接受二次開胸止血，且大多數患者無需輸注血品，24 小時胸管引流量中位數在 Ticagrelor 組為 350 mL，在 Rivaroxaban 組為 390 mL。組間顯著差異（未吸附組 vs. CytoSorb 組）： 未吸附組發生多起出血併發症，且伴隨較長的總手術時間、較高的胸管引流量、較多的紅血球與血小板輸注量、較高的二次開胸率，以及較長的加護病房住院時間與總住院天數。',
+          conclusion: '在緊急開心手術術中使用 CytoSorb 吸附 Ticagrelor 與 Rivaroxaban，數據顯示此策略安全且能有效減少出血併發症，建議應用於服用 Ticagrelor 或 Rivaroxaban 需接受緊急心臟手術的患者以提升安全性。',
+          url: 'https://doi.org/10.1016/j.athoracsur.2018.12.032'
+        },
+        {
+          tag: '多中心前瞻性非隨機觀察研究',
+          year: '2022',
+          author: 'Hassan K et al.',
+          headline: '評估正在接受抗凝血藥物 Apixaban 治療的患者，在緊急心臟手術體外循環期間使用 CytoSorb® 血液吸附移除藥物對出血併發症之影響。',
+          title: 'Removal of Apixaban during Emergency Cardiac Surgery Using Hemoadsorption with a Porous Polymer Bead Sorbent',
+          design: '於三個心臟外科中心連續納入 25 名服用 Apixaban 且需接受體外循環心臟手術（排除主動脈疾病手術與停藥超過 48 小時者）的患者。比較前 12 名未使用血液吸附之對照組，與後 13 名於 CPB 迴路中整合 CytoSorb® 吸附裝置之治療組的出血結果。',
+          results: '術前藥物濃度： CytoSorb 組術前平均每日 Apixaban 劑量顯著高於對照組（p = 0.005），且最後一次服藥至手術的間隔時間顯著較短（p < 0.001）。嚴重出血與二次開胸： CytoSorb 組未發生任何出血事件，且無需接受二次開胸止血。術後引流與止血藥需求： CytoSorb 組術後 24 小時胸管引流量顯著較低(p = 0.03)，且完全無需使用 DDAVP 止血藥物。',
+          conclusion: '對於正在使用 Apixaban 且需接受緊急心臟手術的患者，術中於體外循環整合 CytoSorb® 血液吸附是可行且安全的。相較於未使用血液吸附者，能避免出血併發症發生，並顯著降低 24 小時胸管引流量及止血藥物需求。',
+          url: 'https://doi.org/10.3390/jcm11195889'
+        },
+        {
+          tag: '隨機對照前導試驗',
+          year: '2026',
+          author: 'Jahangirifard A et al.',
+          headline: '評估使用 Clopidogrel 且在接受緊急冠狀動脈繞道手術的患者，術中於體外循環使用CytoSorb是否能減少圍術期出血與輸血需求。',
+          title: 'Randomized pilot trial of intraoperative hemoadsorption in clopidogrel treated patients undergoing urgent coronary artery bypass grafting',
+          design: '將 50 名於停用 Clopidogrel 後 24 小時內接受 CABG 手術的患者以 1:1 隨機分配至術中血液吸附組或對照組，評估術後 24 小時胸管引流量（CTD）、血品輸注量及因出血需再次手術止血之發生率。',
+          results: '術後 24 小時引流量： 吸附組顯著低於對照組(300 mL vs. 500 mL, p= 0.0003)。血品輸注需求顯著減少：濃厚紅血球(p= 0.047)、新鮮冷凍血漿(p < 0.0001)、血小板(p< 0.0001)。二次止血手術與安全性： 對照組發生 1 例因出血需再次手術止血（4.0%），吸附組則為 0 例；試驗期間均未觀察到任何與裝置相關的嚴重不良事件。',
+          conclusion: '在停用 Clopidogrel 後 24 小時內接受 CABG 手術的患者群體中，術中整合血液吸附治療與較低的術後出血量及血品輸注需求相關，且具有良好的裝置安全性。',
+          url: 'https://doi.org/10.1186/s13019-026-04607-7'
         }
       ],
       ie_aortic: [],
