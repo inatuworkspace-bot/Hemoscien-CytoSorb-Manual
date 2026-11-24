@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-Hant" class="scroll-smooth">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SRGHVS9JWJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SRGHVS9JWJ');
-</script>
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRGHVS9JWJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SRGHVS9JWJ');
+  </script>
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KCMZQWMF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>CytoSorb® 體外血液淨化系統 | 英禾美生醫 Hemoscien</title>
@@ -411,6 +406,7 @@
           </p>
         </div>
         <a href="https://cytosorbents.com/cytoscore/" target="_blank" rel="noopener noreferrer"
+           data-ga-category="outbound_click" data-ga-label="CytoScore官方線上計算器"
            class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-cyto-sky to-sky-400 hover:from-sky-400 hover:to-sky-300 text-slate-950 font-extrabold text-sm text-center flex items-center justify-center gap-2 shadow-glow-sky transition">
           <span>前往 CytoScore 官方線上計算器</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -450,24 +446,28 @@
       <!-- Four Action Buttons -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 max-w-4xl mx-auto mb-12">
         <a href="https://cytosorbents.com/" target="_blank" rel="noopener noreferrer"
+           data-ga-category="outbound_click" data-ga-label="CytoSorbents國際官網"
            style="background-color: #353B88;"
            class="py-4 px-5 rounded-2xl hover:brightness-110 border border-indigo-300/30 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition whitespace-nowrap">
           <span>CytoSorbents 國際官網</span>
           <span class="text-sky-300">↗</span>
         </a>
         <a href="https://cytosorbents.com/events/" target="_blank" rel="noopener noreferrer"
+           data-ga-category="outbound_click" data-ga-label="線上課程及會議"
            style="background-color: #353B88;"
            class="py-4 px-5 rounded-2xl hover:brightness-110 border border-indigo-300/30 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition whitespace-nowrap">
           <span>線上課程及會議</span>
           <span class="text-sky-300">↗</span>
         </a>
         <a href="https://www.hemoscien.com.tw/" target="_blank" rel="noopener noreferrer"
+           data-ga-category="outbound_click" data-ga-label="英禾美生醫官網"
            style="background-color: #C30D23;"
            class="py-4 px-5 rounded-2xl hover:brightness-110 border border-red-300/30 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition whitespace-nowrap">
           <span>英禾美生醫官網</span>
           <span class="text-red-200">↗</span>
         </a>
         <a href="https://lihi1.me/AMTVl" target="_blank" rel="noopener noreferrer"
+           data-ga-category="outbound_click" data-ga-label="官方線上諮詢_LINE"
            style="background-color: #06C755;"
            class="py-4 px-5 rounded-2xl hover:brightness-110 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-[0_0_25px_-5px_rgba(6,199,85,0.45)] transition whitespace-nowrap">
           <span>官方線上諮詢</span>
@@ -516,6 +516,7 @@
     const indicationsData = [
       {
         id: 'sepsis',
+        gaLabel: '1_敗血症與血管麻痺性休克',
         shortTitle: '敗血症與血管麻痺性休克',
         fullTitle: '敗血症與血管麻痺性休克 (Septic / Vasoplegic Shock)',
         badge: 'Critical Care 重症加護',
@@ -532,6 +533,7 @@
       },
       {
         id: 'liver',
+        gaLabel: '2_急性肝臟衰竭',
         shortTitle: '急性肝臟衰竭',
         fullTitle: '急性肝臟衰竭與高膽紅素血症 (Liver Dysfunction / ACLF)',
         badge: 'Liver Support 肝臟支持',
@@ -548,6 +550,7 @@
       },
       {
         id: 'rhabdo',
+        gaLabel: '3_橫紋肌溶解症',
         shortTitle: '橫紋肌溶解症',
         fullTitle: '橫紋肌溶解症 (Rhabdomyolysis)',
         badge: 'Kidney Protection 腎臟保護',
@@ -563,6 +566,7 @@
       },
       {
         id: 'antithrombotic',
+        gaLabel: '4_抗凝血藥物清除',
         shortTitle: '抗凝血藥物清除',
         fullTitle: '抗凝血藥物清除 (Antithrombotic Removal)',
         badge: 'Cardiovascular 心臟外科',
@@ -578,6 +582,7 @@
       },
       {
         id: 'ie_aortic',
+        gaLabel: '5_感染性心內膜炎與複雜主動脈手術',
         shortTitle: '感染性心內膜炎與複雜主動脈手術',
         fullTitle: '感染性心內膜炎與複雜主動脈手術 (Infective Endocarditis & Complex Aortic Surgery)',
         badge: 'Cardiovascular 心臟外科',
@@ -592,6 +597,7 @@
       },
       {
         id: 'ards',
+        gaLabel: '6_急性呼吸窘迫症候群',
         shortTitle: '急性呼吸窘迫症候群',
         fullTitle: '急性呼吸窘迫症候群與重症高發炎反應 (Severe ARDS / Hyperinflammation)',
         badge: 'Respiratory & ECMO 呼吸重症',
@@ -612,6 +618,7 @@
       const tabsEl = document.getElementById('indicationTabs');
       tabsEl.innerHTML = indicationsData.map((item, idx) => `
         <button type="button" onclick="selectIndication(${idx})"
+          data-ga-category="indication_click" data-ga-label="${item.gaLabel}"
           class="w-full px-3 py-3 rounded-2xl text-xs sm:text-sm font-bold text-center leading-snug transition cursor-pointer flex items-center justify-center ${
             idx === currentIndIndex
               ? 'bg-cyto-sky text-slate-950 shadow-glow-sky'
@@ -1078,6 +1085,7 @@
         const count = (literatureDatabase[item.id] || []).length;
         return `
           <button type="button" onclick="selectLitCategory(${idx})"
+            data-ga-category="literature_tab_click" data-ga-label="${item.gaLabel}"
             class="w-full px-2.5 py-2.5 rounded-xl text-xs font-bold text-center leading-snug transition cursor-pointer flex items-center justify-center gap-1 ${
               idx === currentLitIndex
                 ? 'bg-cyto-sky text-slate-950'
@@ -1144,6 +1152,7 @@
             ${p.url ? `
               <div class="pt-1 flex justify-end">
                 <a href="${p.url}" target="_blank" rel="noopener noreferrer"
+                   data-ga-category="outbound_click" data-ga-label="文獻原文_${p.author}_${p.year}"
                    class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/40 text-cyto-glow text-xs font-bold transition">
                   <span>查看原文 / PubMed 連結</span>
                   <span>↗</span>
@@ -1171,6 +1180,25 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ==========================================
+    // 6. GA4 CUSTOM EVENT CLICK TRACKING LISTENER
+    // ==========================================
+    document.addEventListener('click', function(event) {
+      const target = event.target.closest('[data-ga-category]');
+      if (!target) return;
+
+      const eventName = target.getAttribute('data-ga-category');
+      const itemLabel = target.getAttribute('data-ga-label') || target.innerText.trim();
+      const linkUrl = target.getAttribute('href') || '';
+
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, {
+          'button_label': itemLabel,
+          'link_url': linkUrl
+        });
+      }
+    });
 
     // Initialize Sections
     renderIndications();
